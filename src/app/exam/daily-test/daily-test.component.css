@@ -1,0 +1,32 @@
+.border {
+    border: 1px solid black;
+}
+
+.spacing  {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.link-pagination {
+    padding: 10px;
+    font-size: large;
+    background-color:whitesmoke;
+    border-radius: 10px;
+    border: black 1px solid;
+    margin: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    color:black;
+}
+
+.marked-ques {
+    background-color: rgb(212, 139, 79);
+}
+
+.answered-ques {
+    background-color: rgb(70, 148, 6);
+}
+
+.current-ques {
+    background-color: rgb(128, 207, 243);
+}

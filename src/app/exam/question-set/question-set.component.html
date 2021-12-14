@@ -1,0 +1,8 @@
+<div class="row" *ngIf ="questions">
+    <div class="col-xs-12" style="text-align: center;">
+       <a class="link-pagination" 
+        [ngClass]="{'marked-ques': q.marked, 'current-ques': index===(i+1), 
+        'answered-ques': ( q.selectedAnswer != null && q.selectedAnswer >= 0) }"
+        *ngFor="let q of questions; let i = index" (click)= "navigateToQuestion(i)">{{i+1}}</a>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="row" *ngIf ="question">
+    <div class="col-xs-12">
+        <h3>{{question.question}}?</h3>
+        <form [formGroup]="questionForm">
+            <p *ngFor="let option of question.options; let i = index">
+                <input type="radio"
+                    [value]= "option.id" 
+                    formControlName="selectedAnswer"> {{option.answer}}
+            </p>
+        </form>
+    </div>
+</div>
+<hr>
+<div class="row" *ngIf ="question">
+    <div class="col-xs-12" style="text-align: center;">
+        <button class="btn btn-primary spacing" (click)="loadPreviousQuestion()" [disabled]="(index)===1">&lt;</button>
+        <button class="btn btn-primary spacing" (click)="markQuestion()">{{question.marked ? 'Unmark' : 'Mark'}}</button>
+        <button class="btn btn-success spacing" (click)="saveAnswer()">Save</button>
+        <button class="btn btn-success spacing" (click)="reviewAnswer()">Review</button>
+        <button class="btn btn-primary spacing" (click)="loadNextQuestion()" [disabled]="(index)===questions.length">&gt;</button>
+    </div>
+</div>
+<hr>
+<app-question-set [index]="index">
+</app-question-set>
+

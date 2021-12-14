@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h3 *ngIf="passPercentage>= 0.4; else failMeassge">Congatulations!! You have cleared the exam</h3>
+        <ng-template #failMeassge>
+            <h3>Sorry. You are failed. Try again!!</h3>
+        </ng-template>
+        <p><b>Result   : </b>{{passPercentage | percent}}</p>
+    </div>
+</div>
